@@ -10,12 +10,14 @@ app.use(cors({
     origin : process.env.FRONTEND_URL,
     credentials : true
 }))
+
 app.use(express.json())
+
 const PORT = process.env.PORT || 8080
 
 app.get('/',(request,response)=>{
     response.json({
-        message : "Server running at" + PORT
+        message : "Server running at " + PORT
     })
 })
 
@@ -24,7 +26,7 @@ app.use('/api',router)
 
 connectDB().then(()=>{
     app.listen(PORT,()=>{
-        console.log("server running at " + PORT)
+        console.log("server running at" + PORT)
     })
 
 })
