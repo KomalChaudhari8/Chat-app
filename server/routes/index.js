@@ -20,4 +20,6 @@ router.get('/user-details',userDetails)
 router.get('/logout',logout)
 //update user details
 router.post('/update-user',updateUserDetails)
+
+
 module.exports = router

@@ -6,10 +6,7 @@ async function userDetails(request,response){
 
         const user = await getUserDetailsFromToken(token)
 
-        return response.status(200).json({
-            message : "user details",
-            data : user
-        })
+        return user
     } catch (error) {
         return response.status(500).json({
             message : error.message || error,
